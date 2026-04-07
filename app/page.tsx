@@ -183,7 +183,7 @@ export default function Home() {
               🎓 RSL & Trinity certification available
             </p>
             <button
-              onClick={() => window.open("https://wa.me/918145302616")}
+              onClick={() => window.open("https://wa.me/918555944220")}
               className="bg-white text-black px-4 py-2 rounded-lg hover:bg-gray-200"
             >
               Join Now
@@ -205,7 +205,7 @@ export default function Home() {
               🎓 RSL & Trinity certification available
             </p>
             <button
-              onClick={() => window.open("https://wa.me/919703466292")}
+              onClick={() => window.open("https://wa.me/918555944220")}
               className="bg-white text-black px-4 py-2 rounded-lg hover:bg-gray-200"
             >
               Join Now
