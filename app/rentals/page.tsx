@@ -59,8 +59,7 @@ export default function Rentals() {
       </header>
 
       {/* HERO */}
-      <section className="relative pt-36 md:pt-44 pb-28 px-6 md:px-10 text-center overflow-hidden">
-
+       <section className="relative pt-28 md:pt-44 pb-20 md:pb-28 px-4 md:px-10 text-center overflow-hidden">
         {/* Glow Background */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.14),transparent_40%)]" />
 
@@ -74,7 +73,7 @@ export default function Rentals() {
             Floyd Rentals
           </p>
 
-          <h1 className="text-4xl md:text-7xl xl:text-8xl font-semibold tracking-tight leading-[0.95]">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl xl:text-8xl font-semibold tracking-tight leading-[0.95]">
             Premium Sound.
             <br />
             Elevated Events.
@@ -86,7 +85,7 @@ export default function Rentals() {
           </p>
 
           {/* Pills */}
-          <div className="mt-10 flex flex-wrap justify-center gap-3">
+          <div className="mt-8 flex flex-wrap justify-center gap-2 md:gap-3">
             {[
               "L-Acoustics",
               "DiGiCo",
@@ -112,7 +111,7 @@ export default function Rentals() {
     "_blank"
   )
 }
-              className="bg-white text-black px-8 py-4 rounded-full font-medium hover:scale-105 transition"
+              className="bg-white text-black px-6 md:px-8 py-3 md:py-4 rounded-full font-medium hover:scale-105 transition"
             >
               Request Private Quote
             </button>
@@ -123,7 +122,7 @@ export default function Rentals() {
                   .getElementById("inventory")
                   ?.scrollIntoView({ behavior: "smooth" })
               }
-              className="border border-white/10 px-8 py-4 rounded-full text-white hover:bg-white/5 transition"
+              className="border border-white/10 px-6 md:px-8 py-3 md:py-4 rounded-full text-white hover:bg-white/5 transition"
             >
               Explore Inventory
             </button>
@@ -380,7 +379,7 @@ Crowd Size: ${data.crowd}`;
 
           <button
             onClick={() => window.open("https://wa.me/918555944220")}
-            className="bg-white text-black px-8 py-4 rounded-full font-medium"
+            className="bg-white text-black px-6 md:px-8 py-3 md:py-4 rounded-full font-medium"
           >
             Speak With Our Team
           </button>

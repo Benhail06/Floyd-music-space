@@ -8,9 +8,9 @@ export default function Home() {
 
       {/* NAVBAR */}
       <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-white/5 border-b border-white/10">
-        <div className="flex items-center justify-between px-8 py-4">
+        <div className="flex items-center justify-between px-5 md:px-8 py-4">
 
-          <h1 className="text-2xl md:text-3xl font-semibold tracking-wide text-gray-300">
+          <h1 className="text-x1 md:text-3xl font-semibold tracking-wide text-gray-300">
             Floyd Music Space
           </h1>
 
@@ -64,7 +64,7 @@ export default function Home() {
       </header>
 
       {/* HERO */}
-      <section className="relative h-[90vh] flex items-center px-8 pt-24">
+      <section className="relative min-h-screen md:h-[90vh] flex items-center px-5 md:px-8 pt-24 md:pt-24">
 
         {/* BACKGROUND */}
         <div className="absolute inset-0">
@@ -81,9 +81,9 @@ export default function Home() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative z-10 max-w-xl"
+          className="relative z-10 max-w-xl -mt-10 md:mt-0"
         >
-          <h1 className="text-3xl md:text-5xl font-medium leading-snug tracking-wide">
+          <h1 className="text-4xl sm:text-5xl md:text-5xl font-medium leading-tight tracking-wide">
             Master Music,
             <br />
             <span className="italic text-gray-300">
