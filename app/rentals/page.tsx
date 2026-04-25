@@ -1,17 +1,23 @@
 "use client";
 
-import { motion } from "framer-motion";
+"use client";
 
-const fadeUp = {
+import { motion, Variants } from "framer-motion";
+
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 50 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.9, ease: "easeOut" },
+    transition: {
+      duration: 0.9,
+      ease: [0.22, 1, 0.36, 1],
+    },
   },
 };
 
-const stagger = {
+
+const stagger: Variants = {
   hidden: {},
   show: {
     transition: {
