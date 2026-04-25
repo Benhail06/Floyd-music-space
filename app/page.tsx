@@ -35,7 +35,9 @@ export default function Home() {
                 </p>
               </div>
             </div>
-
+          <a href="rentals" className="hover:text-white transition">
+               Rentals
+          </a>
             {/* CONTACT */}
             <div className="relative group cursor-pointer">
               <span className="hover:text-white transition">
@@ -246,6 +248,8 @@ export default function Home() {
   </div>
 
 </section>
+
+
       {/* FOOTER */}
       <footer className="px-8 py-10 border-t border-white/10 text-center text-gray-400">
         <h3 className="text-lg font-semibold mb-2">
