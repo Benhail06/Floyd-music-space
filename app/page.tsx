@@ -8,57 +8,59 @@ export default function Home() {
 
       {/* NAVBAR */}
       <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-white/5 border-b border-white/10">
-        <div className="flex items-center justify-between px-5 md:px-8 py-4">
+  <div className="flex items-center justify-between px-5 md:px-8 py-4">
 
-          <h1 className="text-xl md:text-3xl font-semibold tracking-wide text-gray-300">
-            Floyd Music Space
-          </h1>
+    {/* LOGO */}
+    <h1 className="text-xl md:text-3xl font-semibold tracking-wide text-gray-300">
+      Floyd Music Space
+    </h1>
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex gap-8 text-sm text-gray-300">
+    {/* DESKTOP MENU */}
+    <div className="hidden md:flex gap-8 text-sm text-gray-300">
+      <a href="/" className="hover:text-white transition">Home</a>
+      <a href="#courses" className="hover:text-white transition">Courses</a>
+      <a href="/rentals" className="hover:text-white transition">Rentals</a>
+      <a href="#contact" className="hover:text-white transition">Contact</a>
+    </div>
 
-            <a href="#" className="hover:text-white transition">
-              Home
-            </a>
+    {/* RIGHT SIDE */}
+    <div className="flex items-center gap-3">
 
-            <div className="relative group cursor-pointer">
-              <span className="hover:text-white transition">
-                Courses
-              </span>
+      {/* MOBILE MENU BUTTON */}
+      <button
+        onClick={() =>
+          document
+            .getElementById("mobileMenu")
+            ?.classList.toggle("hidden")
+        }
+        className="md:hidden text-white text-2xl"
+      >
+        ☰
+      </button>
 
-              <div className="absolute top-8 left-0 bg-black/90 backdrop-blur-xl border border-white/10 rounded-xl px-5 py-4 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-xl">
-                <p className="text-xs text-gray-400">Grade Certifications</p>
-                <p className="text-xs text-gray-300">
-                  Piano • Guitar • Drums
-                </p>
-              </div>
-            </div>
+      {/* JOIN BUTTON */}
+      <button
+        onClick={() => window.open("https://wa.me/918555944220")}
+        className="bg-white text-black px-4 py-2 rounded-lg text-sm"
+      >
+        Join Us
+      </button>
 
-            <a href="/rentals" className="hover:text-white transition">
-              Rentals
-            </a>
+    </div>
 
-            <div className="relative group cursor-pointer">
-              <span className="hover:text-white transition">
-                Contact
-              </span>
+  </div>
 
-              <div className="absolute top-8 left-0 bg-black/90 backdrop-blur-xl border border-white/10 rounded-xl px-5 py-4 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-xl">
-                <p className="text-xs text-gray-300">📞 8555944220</p>
-              </div>
-            </div>
-
-          </div>
-
-          <button
-            onClick={() => window.open("https://wa.me/918555944220")}
-            className="bg-white text-black px-4 md:px-5 py-2 rounded-lg text-sm hover:bg-gray-200 transition"
-          >
-            Join Us
-          </button>
-
-        </div>
-      </header>
+  {/* MOBILE DROPDOWN */}
+  <div
+    id="mobileMenu"
+    className="hidden md:hidden px-5 pb-4 space-y-3 text-gray-300 bg-black/90"
+  >
+    <a href="/" className="block">Home</a>
+    <a href="#courses" className="block">Courses</a>
+    <a href="/rentals" className="block">Rentals</a>
+    <a href="#contact" className="block">Contact</a>
+  </div>
+</header>
 
       {/* HERO */}
       <section className="relative min-h-screen md:h-[90vh] flex items-center px-5 md:px-8 pt-24">
