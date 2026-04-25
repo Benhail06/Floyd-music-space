@@ -17,9 +17,10 @@ const playfair = Playfair_Display({
   variable: "--font-playfair",
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Floyd Music Space",
-  description: "Professional music training in Drums, Guitar & Piano with RSL & Trinity certification",
+  description: "Premium Music Academy & Rentals",
+  viewport: "width=device-width, initial-scale=1",
 };
 
 export default function RootLayout({

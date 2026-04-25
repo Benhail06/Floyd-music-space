@@ -74,7 +74,7 @@ export default function Rentals() {
             Floyd Rentals
           </p>
 
-          <h1 className="text-5xl md:text-7xl xl:text-8xl font-semibold tracking-tight leading-[0.95]">
+          <h1 className="text-4xl md:text-7xl xl:text-8xl font-semibold tracking-tight leading-[0.95]">
             Premium Sound.
             <br />
             Elevated Events.
@@ -108,7 +108,7 @@ export default function Rentals() {
             <button
               onClick={() =>
   window.open(
-    "https://wa.me/919346694002?text=I%20want%20to%20know%20your%20services%20and%20pricing",
+    "https://wa.me/919346694002?text=Hi%20I%20want%20to%20know%20private%20quote%20of%20your%20PA%20system",
     "_blank"
   )
 }
