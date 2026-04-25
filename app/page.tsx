@@ -64,7 +64,7 @@ export default function Home() {
       </header>
 
       {/* HERO */}
-      <section className="relative min-h-screen md:h-[90vh] flex items-center px-5 md:px-8 pt-24 md:pt-24">
+      <section className="relative min-h-screen md:min-h-screen md:h-[90vh] flex items-center px-5 md:px-8 pt-24 md:pt-24">
 
         {/* BACKGROUND */}
         <div className="absolute inset-0">
