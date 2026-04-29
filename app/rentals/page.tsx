@@ -27,7 +27,22 @@ const stagger: Variants = {
 
 export default function Rentals() {
   const [active, setActive] = useState("L-Acoustics");
+const [activeService, setActiveService] = useState("Concert Ready Systems");
 
+const services = {
+  "Concert Ready Systems": {
+    desc: "Engineered for live concerts and high-energy performances. Our systems deliver powerful, distortion-free sound across large venues with exceptional clarity.",
+  },
+  "Wedding Specialists": {
+    desc: "Elegant audio tailored for weddings — from vows to live music, ensuring every moment is heard beautifully without overpowering the ambiance.",
+  },
+  "Corporate Productions": {
+    desc: "Professional sound solutions for corporate events, launches and conferences. Clean, balanced and reliable audio for impactful presentations.",
+  },
+  "Custom Packages": {
+    desc: "Fully customized setups based on your event size, venue and requirements — combining premium gear and expert execution.",
+  },
+};
   const products = {
     "L-Acoustics": {
       image: "/lacoustics.jpg",
@@ -183,30 +198,51 @@ export default function Rentals() {
         </motion.div>
       </section>
 
-      {/* TRUST STRIP */}
-      <motion.section
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        className="px-6 md:px-10 pb-24"
-      >
-        <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-5">
-          {[
-            "Concert Ready Systems",
-            "Wedding Specialists",
-            "Corporate Productions",
-            "Custom Packages",
-          ].map((item) => (
-            <div
-              key={item}
-              className="rounded-3xl border border-white/10 bg-white/[0.03] px-6 py-5 text-center text-white/70"
-            >
-              {item}
-            </div>
-          ))}
+      {/* TRUST STRIP INTERACTIVE */}
+<motion.section
+  variants={fadeUp}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true }}
+  className="px-6 md:px-10 pb-24"
+>
+  <div className="max-w-6xl mx-auto">
+
+    {/* Buttons */}
+    <div className="grid md:grid-cols-4 gap-5">
+      {Object.keys(services).map((item) => (
+        <div
+          key={item}
+          onMouseEnter={() => setActiveService(item)}
+          onClick={() => setActiveService(item)}
+          className={`cursor-pointer rounded-3xl border px-6 py-5 text-center transition ${
+            activeService === item
+              ? "bg-white text-black border-white"
+              : "border-white/10 bg-white/[0.03] text-white/70"
+          }`}
+        >
+          {item}
         </div>
-      </motion.section>
+      ))}
+    </div>
+
+    {/* Description Panel */}
+    {activeService && (
+      <motion.div
+        key={activeService}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+        className="mt-8 max-w-3xl mx-auto rounded-3xl border border-white/10 bg-[#0f0f0f] p-6 md:p-8 text-center"
+      >
+        <p className="text-white/70 leading-relaxed text-lg">
+          {services[activeService as keyof typeof services].desc}
+        </p>
+      </motion.div>
+    )}
+
+  </div>
+</motion.section>
 
       {/* INVENTORY */}
       <motion.section
