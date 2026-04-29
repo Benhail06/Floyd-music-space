@@ -1,8 +1,8 @@
-"use client";
 
 "use client";
 
 import { motion, Variants } from "framer-motion";
+import { useState } from "react";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -16,7 +16,6 @@ const fadeUp: Variants = {
   },
 };
 
-
 const stagger: Variants = {
   hidden: {},
   show: {
@@ -27,6 +26,32 @@ const stagger: Variants = {
 };
 
 export default function Rentals() {
+  const [active, setActive] = useState("L-Acoustics");
+
+  const products = {
+    "L-Acoustics": {
+      image: "/lacoustics.jpg",
+      desc: "World-class line array system used for concerts, weddings and luxury productions.",
+    },
+    "DiGiCo": {
+      image: "/digico.jpg",
+      desc: "Premium digital mixing console trusted by touring engineers.",
+    },
+    "JBL VRX": {
+      image: "/jblvrx.jpg",
+      desc: "Powerful JBL vertical array system ideal for events.",
+    },
+    "Premium Instruments": {
+      image: "/keys.jpg",
+      desc: "High-end keyboards, drums, guitars and stage instruments.",
+    },
+    "Fast Setup": {
+      image: "/setup.jpg",
+      desc: "Professional crew, fast setup and clean execution.",
+    },
+  };
+
+  
   return (
     <main className="bg-black text-white min-h-screen overflow-x-hidden">
 
@@ -85,22 +110,50 @@ export default function Rentals() {
           </p>
 
           {/* Pills */}
-          <div className="mt-8 flex flex-wrap justify-center gap-2 md:gap-3">
-            {[
-              "L-Acoustics",
-              "DiGiCo",
-              "JBL VRX",
-              "Premium Instruments",
-              "Fast Setup",
-            ].map((item) => (
-              <span
-                key={item}
-                className="px-4 py-2 rounded-full border border-white/10 text-sm text-white/70 bg-white/[0.03]"
-              >
-                {item}
-              </span>
-            ))}
-          </div>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+  {Object.keys(products).map((item) => (
+    <button
+      key={item}
+      onMouseEnter={() => setActive(item)}
+      onClick={() => setActive(item)}
+      className={`px-4 py-2 rounded-full border text-sm transition ${
+        active === item
+          ? "bg-white text-black border-white"
+          : "border-white/10 text-white/70 bg-white/[0.03]"
+      }`}
+    >
+      {item}
+    </button>
+  ))}
+</div>
+
+{/* Product Showcase */}
+<div className="mt-10 max-w-4xl mx-auto rounded-3xl border border-white/10 bg-[#0f0f0f] p-6 md:p-8 grid md:grid-cols-2 gap-6 items-center">
+  
+  <img
+    src={products[active as keyof typeof products].image}
+    alt={active}
+    className="rounded-2xl w-full h-[280px] object-cover"
+  />
+
+  <div className="text-left">
+    <h3 className="text-3xl font-semibold mb-4">{active}</h3>
+    <p className="text-white/60 leading-relaxed mb-6">
+      {products[active as keyof typeof products].desc}
+    </p>
+
+    <button
+      onClick={() =>
+        window.open(
+          "https://wa.me/919346694002?text=Hi I want pricing for " + active
+        )
+      }
+      className="bg-white text-black px-6 py-3 rounded-full font-medium"
+    >
+      Get Quote
+    </button>
+  </div>
+</div>
 
           {/* CTA */}
           <div className="mt-12 flex flex-col md:flex-row gap-4 justify-center">
