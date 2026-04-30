@@ -31,16 +31,16 @@ const [activeService, setActiveService] = useState("Concert Ready Systems");
 
 const services = {
   "Concert Ready Systems": {
-    desc: "Engineered for live concerts and high-energy performances. Our systems deliver powerful, distortion-free sound across large venues with exceptional clarity.",
+    desc: "Built for demanding live environments, our concert-grade systems deliver immense power, crystal-clear output, and consistent coverage across large-scale venues — trusted for performances where sound quality cannot be compromised.",
   },
   "Wedding Specialists": {
-    desc: "Elegant audio tailored for weddings — from vows to live music, ensuring every moment is heard beautifully without overpowering the ambiance.",
+    desc: "Elegant audio experiences tailored for weddings — from heartfelt vows to live performances — delivering crystal-clear sound that enhances every moment while preserving the warmth and intimacy of your celebration.",
   },
   "Corporate Productions": {
-    desc: "Professional sound solutions for corporate events, launches and conferences. Clean, balanced and reliable audio for impactful presentations.",
+    desc: "Precision-engineered sound solutions for corporate environments — from high-stakes conferences to premium product launches — delivering crystal-clear audio, flawless balance, and uncompromising reliability to elevate every presentation and brand experience.",
   },
   "Custom Packages": {
-    desc: "Fully customized setups based on your event size, venue and requirements — combining premium gear and expert execution.",
+    desc: "Fully customized production setups designed around your event’s scale, venue dynamics, and creative vision — integrating world-class equipment, precision sound engineering, and experienced crew to deliver a flawless, high-impact audio experience from start to finish.",
   },
 };
   const products = {
@@ -66,7 +66,32 @@ const services = {
     },
   };
 
-  
+  const inventory = [
+  {
+    title: "🔊 Signature Audio Systems",
+    desc: "Concert-grade L-Acoustics, JBL VRX and premium rigs delivering powerful, crystal-clear sound across venues of any scale.",
+    price: "Starting ₹12k",
+    image: "/lacoustics.jpg",
+  },
+  {
+    title: "🎚️ Touring Consoles",
+    desc: "Industry-standard mixing consoles including DiGiCo and Allen & Heath for precision control and professional sound engineering.",
+    price: "Custom Quote",
+    image: "/digico.jpg",
+  },
+  {
+    title: "🎹 Elite Instruments",
+    desc: "High-end keyboards, guitars, bass rigs and drum kits designed for stage performance and studio-quality output.",
+    price: "Starting ₹3k",
+    image: "/keys.jpg",
+  },
+  {
+    title: "🎉 Full Event Production",
+    desc: "End-to-end event execution including setup, sound design, crew coordination and flawless delivery.",
+    price: "Private Pricing",
+    image: "/setup.jpg",
+  },
+];
   return (
     <main className="bg-black text-white min-h-screen overflow-x-hidden">
 
@@ -271,41 +296,31 @@ const services = {
             className="grid md:grid-cols-2 gap-8"
           >
 
-            {[
-              {
-                title: "🔊 Signature Audio Systems",
-                desc: "L-Acoustics, JBL VRX, Bose, RCF rigs for intimate to massive venues.",
-                price: "Starting ₹12k",
-              },
-              {
-                title: "🎚️ Touring Consoles",
-                desc: "Professional FOH and monitor consoles including DiGiCo and Allen & Heath.",
-                price: "Custom Quote",
-              },
-              {
-                title: "🎹 Elite Instruments",
-                desc: "Kronos, Roland, Yamaha digital pianos, guitars, bass rigs and drums(E.kit and acoustic kits) with K custom series .",
-                price: "Starting ₹3k",
-              },
-              {
-                title: "🎉 Full Event Production",
-                desc: "Audio planning, crew support, stage coordination and execution.",
-                price: "Private Pricing",
-              },
-            ].map((item) => (
-              <motion.div
-                key={item.title}
-                variants={fadeUp}
-                whileHover={{ y: -8, scale: 1.015 }}
-                className="rounded-3xl border border-white/10 bg-[#0f0f0f] p-8 md:p-10"
-              >
-                <h3 className="text-2xl md:text-3xl mb-4">{item.title}</h3>
-                <p className="text-white/60 leading-relaxed mb-8">
-                  {item.desc}
-                </p>
-                <p className="text-lg">{item.price}</p>
-              </motion.div>
-            ))}
+            {inventory.map((item) => (
+  <motion.div
+    key={item.title}
+    whileHover={{ scale: 1.02 }}
+    className="group relative overflow-hidden rounded-3xl border border-white/10 bg-[#0f0f0f]"
+  >
+    {/* Image */}
+    <img
+      src={item.image}
+      alt={item.title}
+      className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-30 transition duration-500"
+    />
+
+    {/* Content */}
+    <div className="relative p-8 md:p-10">
+      <h3 className="text-2xl md:text-3xl mb-4">{item.title}</h3>
+
+      <p className="text-white/60 leading-relaxed mb-6 group-hover:text-white transition">
+        {item.desc}
+      </p>
+
+      <p className="text-lg font-medium">{item.price}</p>
+    </div>
+  </motion.div>
+))}
 
           </motion.div>
         </div>
