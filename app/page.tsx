@@ -40,11 +40,17 @@ export default function Home() {
 
       {/* JOIN BUTTON */}
       <button
-        onClick={() => window.open("https://wa.me/918555944220")}
-        className="bg-white text-black px-4 py-2 rounded-lg text-sm"
-      >
-        Join Us
-      </button>
+  onClick={() =>
+    window.open(
+      "https://wa.me/918465080227?text=" +
+        encodeURIComponent("Hi I want to know about your classes"),
+      "_blank"
+    )
+  }
+  className="bg-white text-black px-4 py-2 rounded-lg text-sm"
+>
+  Join Us
+</button>
 
     </div>
 
@@ -98,7 +104,7 @@ export default function Home() {
           </p>
 
           <button
-            onClick={() => window.open("https://wa.me/918555944220")}
+            onClick={() => window.open("https://wa.me/918465080227")}
             className="mt-7 bg-white text-black px-6 py-3 rounded-xl hover:bg-gray-200 transition w-fit"
           >
             Book A Class
@@ -163,7 +169,7 @@ export default function Home() {
               <p className="text-gray-400 mb-5">{item.text}</p>
 
               <button
-                onClick={() => window.open("https://wa.me/918555944220")}
+                onClick={() => window.open("https://wa.me/918465080227")}
                 className="bg-white text-black px-4 py-2 rounded-lg"
               >
                 Join Now
@@ -214,7 +220,7 @@ export default function Home() {
 
       {/* WHATSAPP */}
       <a
-        href="https://wa.me/918555944220"
+        href="https://wa.me/918465080227"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-5 right-4 bg-green-500 px-5 py-3 rounded-full shadow-lg text-white z-50"
